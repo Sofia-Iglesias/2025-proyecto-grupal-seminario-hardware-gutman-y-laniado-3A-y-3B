@@ -18,10 +18,10 @@
 
 ## **`Componentes`**
 
-- `Amplificador Operacional`  
-- `FootSwitch`  
-- `Led`
-- `Potenciometro`
+- `Amplificador Operacional`https://docs.google.com/document/d/1x5U-2Od3pO9gtFFlgnL_3yEPDwVw7f8vl3rmNkuKDv4/edit?usp=sharing  
+- `FootSwitch`https://docs.google.com/document/d/1IfCA4cAcZE8F8ZJSZCeewLjz6J9HDMkL0l-NRq7huRI/edit?usp=sharing  
+- `Led`https://docs.google.com/document/d/1dIMbx53PHvLbdcblgnoAzXLsdHRVRSaw6E0w-oqkyzE/edit?usp=sharing
+- `Potenciometro`https://docs.google.com/document/d/14BpROyRqzSYcA-kvPGMQTObaEwMKbjWk-aOJ27zd4Zs/edit?usp=sharing
 - `Output Jack`
 - `Resistencias`
 - `Capacitores`
