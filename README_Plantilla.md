@@ -18,9 +18,13 @@
 
 ## **`Componentes`**
 
-- `Componente 1`  
-- `Componente 2`  
-- `Componente 3`
+- `Amplificador Operacional`  
+- `FootSwitch`  
+- `Led`
+- `Potenciometro`
+- `Output Jack`
+- `Resistencias`
+- `Capacitores`
 
 `Completar una vez definido el proyecto.`
 
