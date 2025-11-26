@@ -5,12 +5,12 @@
 
 ## **`Integrante/s`**
 
-- `Nombre 1`  
-- `Nombre 2`
+- `Pedro`  
+- `Lorenzo`
 
-## **`Objetivo`**
+## **`Pedal de guitarra`**
 
-`Breve descripción del propósito del proyecto. Completar una vez definido el proyecto.`
+`Un pedal de guitarra programable que brinda efectos al instumento`
 
 ## **`Descripción del Proyecto`**
 
@@ -18,31 +18,10 @@
 
 ## **`Componentes`**
 
-- `Componente 1`  
-- `Componente 2`  
-- `Componente 3`
-
-`Completar una vez definido el proyecto.`
-
-## **`Requisitos`**
-
-- `Software necesario`  
-- `Librerías`  
-- `Hardware adicional`
-
-`Completar una vez definido el proyecto.`
-
-## **`Etapas del proyecto`**
-### Etapa 1:
-- `Acción 1`
-- `Acción 2`
-
-### Etapa 2:
-- `Acción 1`
-- `Acción 2`
-
-## **`Extras`**
-
-- `Extra 1`  
-- `Extra 2`  
-- `Extra 3`
+- `Amplificador Operacional`  
+- `FootSwitch`
+- `Led`
+- `Potenciometro`
+- `Output Jack`
+- `Resistencias`
+- `Capacitores`

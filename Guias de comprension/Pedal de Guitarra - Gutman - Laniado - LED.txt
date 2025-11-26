@@ -1,0 +1,66 @@
+¿Qué tipo de dispositivo es (sensor o actuador)? Explicá brevemente su función principal.
+
+Es un actuador. Su función principal es emitir luz cuando recibe una señal eléctrica. Se va a usar para indicar cuando el pedal está apagado y prendido.
+
+¿Qué tipo de señal utiliza para comunicarse con Arduino?
+
+Utiliza una señal digital.
+Puede estar en estado HIGH (encendido) o LOW (apagado).
+
+¿Cuál es el rango de valores que puede entregar o recibir el componente?
+
+El LED recibe una tensión entre 1.8 V y 2.2 V (para un LED rojo) y una corriente de 10 a 20 mA.
+
+¿Qué pines de conexión tiene el componente? Enumerar y describir su función.
+
+Ánodo (positivo, pata larga): se conecta al pin de salida de Arduino (a través de una resistencia).
+Cátodo (negativo, pata corta): se conecta a GND (tierra).
+
+¿Qué pin o pines de Arduino utilizan para conectarlo? ¿Por qué elegiste esos pines?
+
+Se puede conectar, por ejemplo, al pin digital 13 de Arduino.
+Ese pin se elige porque puede entregar una señal digital y además muchos Arduinos ya tienen un LED interno en el pin 13 para pruebas.
+
+Dibujá y explicá brevemente el esquema de conexión del componente con Arduino (incluyendo resistencias si son necesarias).
+Pin 13 → Resistencia (220 Ω) → Ánodo del LED (pata larga)
+	
+Cátodo del LED (pata corta) → GND
+
+
+¿Cuál es el principio de funcionamiento del componente?
+
+Su función principal es que la corriente circule del ánodo al cátodo, para así, que los electrones liberen energía en forma de luz.
+
+¿Utiliza alguna librería particular para programarlo?
+
+No.
+
+¿Cómo se interpreta el dato de entrada o salida del componente en el programa?
+El LED se maneja con un valor digital
+HIGH → LED encendido
+LOW → LED apagado
+
+¿Qué limitaciones o precauciones eléctricas hay que tener en cuenta?
+
+No aplicar más de 2.2 V directamente al LED.
+Siempre usar una resistencia en serie (220–330 Ω) para limitar la corriente y que así no se queme.
+Respetar la polaridad (del ánodo al cátodo).
+
+¿Cómo verificarías que el componente funciona correctamente antes de incorporarlo al proyecto final?
+
+Probar el LED con una resistencia y Arduino en estado HIGH.
+Si el LED enciende, está en buen estado.
+También se puede usar el multímetro en modo diodo para comprobar continuidad.
+
+Simular en Tinkercad e incluir el link de la simulación. 
+
+https://www.tinkercad.com/things/bPEBGUGr6Tu/editel?returnTo=%2Fdashboard
+
+En caso de aplicar, ¿qué valor o lectura esperás obtener en la simulación si el componente funciona correctamente?
+
+Esperamos obtener la lectura de si el footswitch se presionó una vez, en este caso debería estar el led encendido y, por lo tanto, el pedal también, y si se presiona otra vez, el LED debería estar apagado y, por lo tanto, el pedal también.
+
+¿Cómo podría fallar el componente o cómo detectarías un mal funcionamiento en el código o en el circuito?
+
+El LED podría fallar ya sea porque está quemado, conectado al revés, no tiene una resistencia, por lo que se quemaría, por un error en el código, etc.
+Para detectar el mal funcionamiento, habría que verificar las conexiones, revisar el código, probar con otro LED (en caso de que esté quemado), medir voltaje en el pin con el multímetro.
