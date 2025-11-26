@@ -1,0 +1,72 @@
+¿Qué tipo de dispositivo es (sensor o actuador)? Explica brevemente su función principal.
+Es un sensor o dispositivo de entrada. Su función principal es detectar cuándo el usuario presiona el pedal (activa el interruptor) y enviar una señal al Arduino para que ejecute una acción (en este caso sería activar el efecto y la luz).
+¿Qué tipo de señal utiliza para comunicarse con Arduino?
+Utiliza una señal digital. El Arduino recibe un valor HIGH cuando el circuito está abierto o LOW cuando el footswitch se presiona.
+¿Cuál es el rango de valores que puede entregar o recibir el componente?
+El footswitch entrega dos estados:
+0 V (LOW) → cuando está liberado
+
+
+5 V (HIGH) → cuando se presiona
+
+
+¿Qué pines de conexión tiene el componente? Enumerar y describir su función.
+Depende del modelo, pero el más común tiene 2 o 3 pines:
+COM (común): punto central del interruptor.
+NO (Normally Open): solo se conecta con COM cuando el pedal se presiona.
+Algunos modelos tienen también NC, que se conecta con COM cuando el pedal está suelto)
+
+
+¿Qué pin o pines de Arduino utilizan para conectarlo? ¿Por qué elegiste estos pines?
+Se conecta a un pin digital de entrada (por ejemplo, el pin 2). Se elige este pin porque permite leer estados digitales y puede usarse con interrupciones si se desea detectar el cambio instantáneo del pedal.
+Dibuja y explica brevemente el esquema de conexión del componente con Arduino (incluyendo resistencias si son necesarias).
+Conexión típica (con resistencia pull-down):
+Un lado del footswitch (COM) → 5V
+Otro lado del footswitch (NO) → Pin digital 2 de Arduino
+Resistencia de 10 kΩ → entre Pin digital 2 y GND
+
+
+¿Cuál es el principio de funcionamiento del componente?
+El footswitch es un interruptor mecánico. Cuando se presiona, cierra el circuito entre sus contactos (COM y NO), permitiendo el paso de corriente y cambiando el estado lógico leído por el Arduino.
+¿Utiliza alguna librería particular para programarlo?
+No.
+¿Cómo se interpreta el dato de entrada o salida del componente en el programa?
+El Arduino lee el estado del pin digital al que está conectado:
+HIGH→ pedal presionado.
+LOW → pedal liberado.
+
+¿Qué limitaciones o precauciones eléctricas hay que tener en cuenta?
+
+El footswitch no debe recibir más de 5V si se usa con Arduino.
+
+
+Evitar rebotes mecánicos (pueden producir lecturas erróneas); se puede usar un “debounce” por software o con un condensador.
+
+
+Verificar la polaridad y tipo de contacto (NO o NC).
+
+
+No conectar directamente a 5V sin resistencia si se configura en modo pull-down.
+
+¿Cómo verificamos que el componente funciona correctamente antes de incorporarlo al proyecto final?
+
+Probar con un multímetro para comprobar la continuidad entre los pines al presionar el pedal.
+Conectarlo a un pin de entrada y usar el Monitor Serial para verificar que se active y se desactive 
+
+Simular en Tinkercad e incluir el link de la simulación.
+
+https://www.tinkercad.com/things/bPEBGUGr6Tu/editel?returnTo=%2Fdashboard
+En caso de aplicar, ¿qué valor o lectura esperás obtener en la simulación si el componente funciona correctamente?
+Esperás que el valor leído por el pin cambie entre HIGH y LOW cada vez que se presiona el pedal. Si está conectado a un LED, este se encenderá al presionar el pedal y se apagará al soltarlo.
+¿Cómo podría fallar el componente o cómo detectarías un mal funcionamiento en el código o en el circuito?
+Posibles fallas:
+Conexión suelta o pin mal configurado.
+Sin resistencia pull-up.
+Rebote mecánico (el estado cambia varias veces con una sola pulsación).
+Footswitch dañado (no hay continuidad al presionar).
+
+
+Detección:
+Revisar lecturas en el monitor serial.
+Usar un multímetro para comprobar el cambio de estado.
+Sustituir temporalmente el footswitch por un botón normal para comparar comportamiento.
