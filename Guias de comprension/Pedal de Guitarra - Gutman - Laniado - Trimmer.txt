@@ -1,0 +1,81 @@
+¿Qué tipo de dispositivo es (sensor o actuador)? Explicá brevemente su función principal.
+
+Es un sensor.
+
+Su función principal es ajustar manualmente una resistencia variable, lo que permite modificar la cantidad de voltaje que llega a una entrada analógica de Arduino.
+En este proyecto se van a utilizar 2, uno para el volumen y otro para el tono del sonido.
+
+
+¿Qué tipo de señal utiliza para comunicarse con Arduino?
+
+Utiliza una señal analógica.
+
+¿Cuál es el rango de valores que puede entregar o recibir el componente?
+
+Tensión de entrada: 0 V a 5 V
+
+
+Tensión de salida (variable): entre 0 V y 5 V según la posición del eje.
+
+
+Valor de resistencia total: suele ser de 1 kΩ, 5 kΩ, 10 kΩ o 100 kΩ, dependiendo del modelo.
+
+
+Arduino interpretará su señal en un rango de 0 a 1023 (valor analógico digitalizado).
+
+
+¿Qué pines de conexión tiene el componente? Enumerar y describir su función.
+
+Tiene tres pines, uno de alimentación positiva, otro de conexión a tierra y otro de salida.
+
+¿Qué pin o pines de Arduino utilizan para conectarlo? ¿Por qué elegiste esos pines?
+
+Se conecta el pin de salida (central) del trimmer a un pin analógico del Arduino.
+Los otros dos pines van a 5 V y GND.
+
+Dibujá y explicá brevemente el esquema de conexión del componente con Arduino (incluyendo resistencias si son necesarias).
++5v → trimmer →  Pin de salida (analogico)
+GND —---⬆
+
+¿Cuál es el principio de funcionamiento del componente?
+El trimmer funciona como un divisor de tensión variable.
+Internamente tiene una resistencia fija y un cursor móvil (contacto deslizante) que se desplaza a lo largo de la resistencia.
+
+¿Utiliza alguna librería particular para programarlo?
+
+No
+
+¿Cómo se interpreta el dato de entrada o salida del componente en el programa?
+
+analogRead(pin)
+
+¿Qué limitaciones o precauciones eléctricas hay que tener en cuenta?
+
+No aplicar más de 5 V al trimmer.
+
+
+No exceder la corriente máxima.
+
+
+Evitar conectar el pin central directamente a 5 V o GND sin resistencia, puede llegar a dañarse
+
+
+No girar el eje con fuerza excesiva.
+
+¿Cómo verificarías que el componente funciona correctamente antes de incorporarlo al proyecto final?
+
+Verificaremos que el componente funcione correctamente conectándolo y subiendo un código de prueba para que se vea en el monitor serial como va cambiando el valor de 0 a 1023 al girar el trimmer. Si esto pasa, el componente funciona correctamente.
+
+
+Simular en Tinkercad e incluir el link de la simulación. 
+
+Link a Tinkercad
+
+En caso de aplicar, ¿qué valor o lectura esperás obtener en la simulación si el componente funciona correctamente?
+
+Esperamos obtener que el volumen/tono suba al girarlo hacia la derecha y que baje hacia la izquierda
+
+¿Cómo podría fallar el componente o cómo detectarías un mal funcionamiento en el código o en el circuito?
+
+El trimmer podría fallar debido a conexiones incorrectas, que hayan lecturas inestables o saltos bruscos (esto puede pasar porque el componente esta sucio o gastado).
+Esto puede ser detectado en el monitor serial fijándote si el valor se mantiene fijo o cambia sin sentido.
