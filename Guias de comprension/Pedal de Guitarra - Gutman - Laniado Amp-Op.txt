@@ -1,0 +1,112 @@
+¿Qué tipo de dispositivo es (sensor o actuador)? Explicá brevemente su función principal.
+
+Es un dispositivo activo que se utiliza como amplificador de señal.
+Su función principal es aumentar la amplitud de una señal eléctrica de entrada, manteniendo su forma original.
+
+¿Qué tipo de señal utiliza para comunicarse con Arduino?
+
+El amplificador operacional trabaja con señales analógicas.
+
+¿Cuál es el rango de valores que puede entregar o recibir el componente?
+
+Tensión de alimentación (Vcc): entre ±15 V y ±5 V (en circuitos con fuente dual), o 0–5 V en configuración de fuente simple (para Arduino).
+
+
+Tensión de entrada: normalmente entre 0 V y (Vcc – 1.5 V).
+
+
+Tensión de salida: entre 0 V y (Vcc – 1.5 V).
+
+
+Corriente de salida: unos pocos miliamperios (típicamente 10–20 mA).
+
+¿Qué pines de conexión tiene el componente? Enumerar y describir su función.
+
+V+ (pin 7): alimentación positiva (por ejemplo, +5 V o +12 V).
+V– (pin 4): alimentación negativa o tierra (GND).
+Entrada inversora (–): donde se aplica la señal que se desea restar o invertir.
+Entrada no inversora (+): donde se aplica la señal que se desea amplificar sin invertir.
+Salida: entrega la señal amplificada.
+
+¿Qué pin o pines de Arduino utilizan para conectarlo? ¿Por qué elegiste esos pines?
+
+Salida del Op-Amp → Pin analógico A0 (entrada del Arduino).
+ Esto permite que Arduino lea la señal amplificada como un valor analógico (0–1023).
+
+
+V+ del Op-Amp → 5 V (alimentación del Arduino).
+
+
+V– del Op-Amp → GND.
+
+
+Dibujá y explicá brevemente el esquema de conexión del componente con Arduino (incluyendo resistencias si son necesarias).
+
+
+Señal de entrada:
+Puede venir de un sensor, micrófono o trimmer. Es una señal débil que queremos amplificar.
+
+
+Amplificador operacional:
+Recibe la señal de entrada y la amplifica según la ganancia definida por resistencias R1 y R2.
+
+
+Salida:
+Entrega la señal amplificada, que se conecta a una entrada analógica de Arduino (A0) para ser leída.
+
+¿Cuál es el principio de funcionamiento del componente?
+
+El amplificador operacional compara las tensiones entre sus dos entradas (+ y –).
+Si la entrada no inversora (+) tiene un voltaje mayor que la inversora (–), la salida aumenta.
+
+
+Si es menor, la salida disminuye.
+
+
+De esta forma, el Op-Amp amplifica la diferencia de potencial entre ambas entradas, según la ganancia configurada por resistencias externas.
+
+¿Utiliza alguna librería particular para programarlo?
+
+No.
+
+¿Cómo se interpreta el dato de entrada o salida del componente en el programa?
+
+Arduino mide la señal de salida del Op-Amp con una entrada analógica.
+El valor leído va de 0 a 1023, correspondiente a 0 V a 5 V.
+
+¿Qué limitaciones o precauciones eléctricas hay que tener en cuenta?
+
+No exceder la tensión máxima de alimentación del Op-Amp (generalmente 5 V o ±15 V).
+Evitar aplicar señales mayores a la tensión de alimentación.
+No conectar la salida directamente a cargas de alta corriente.
+Usar resistencias adecuadas para fijar la ganancia sin saturar la salida.
+Asegurarse de una buena conexión a tierra (GND) compartida con el Arduino.
+
+¿Cómo verificarías que el componente funciona correctamente antes de incorporarlo al proyecto final?
+
+Armar un circuito de prueba (por ejemplo, un amplificador no inversor).
+Aplicar una señal conocida (por ejemplo, una onda senoidal de 1 V).
+Medir la salida con un osciloscopio o multímetro: la amplitud debe ser mayor según la ganancia calculada.
+Si la señal se amplifica correctamente, el componente está en buen estado.
+
+Simular en Tinkercad e incluir el link de la simulación.
+ 
+https://www.tinkercad.com/things/2k6n9U1NWqE-bodacious-hillar/editel?sharecode=RSX-P6ZFda4heac5fbgOyR3TwknBKXIOXcbp7_oKZDU
+
+En caso de aplicar, ¿qué valor o lectura esperás obtener en la simulación si el componente funciona correctamente?
+
+Esperamos que el voltaje de salida del Op-Amp (leído por Arduino) sea mayor que el voltaje de entrada, proporcional a la ganancia configurada.
+ Por ejemplo, si la entrada es 1 V y la ganancia es 3, la salida debería rondar los 3 V (sin saturar).
+
+¿Cómo podría fallar el componente o cómo detectarías un mal funcionamiento en el código o en el circuito?
+
+Posibles fallas:
+El Op-Amp no amplifica (sin salida) → error en las conexiones o alimentación.
+Salida saturada (siempre al máximo o mínimo) → ganancia muy alta o entrada fuera de rango.
+Ruido o distorsión → mala conexión de tierra o componentes defectuosos.
+Verificación:
+Medir la tensión en las entradas y salida con un multímetro.
+Revisar que la alimentación sea estable.
+Probar con otro Op-Amp si se sospecha daño físico.
+Confirmar en la simulación que la ganancia sea la esperada.
+
